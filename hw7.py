@@ -31,3 +31,22 @@ from functools import reduce
 seq1 = [5, 7, 11, 8, 9]
 max_element = reduce(lambda a, b: a if a > b else b, seq1)
 print(max_element)
+
+#Домашнее задание Типы данных. поправил код, первоначально неправильно понял задание.
+
+#Задача 6.Вводится текст со сбалансированными скобками, программа выводит на экран текст без скобок и их содержимого. На пробелы и знаки препинания внимание не обращать, вложенных скобок в исходной строке нет.
+#Подсказка: вспомните метод find, изученный на занятии.
+#Ввод:When he saw Sally (a girl he used to go to school with) in the shop, he could not believe his eyes. She was fantastic (as always)!
+#Вывод: a girl he used to go to school with as always
+
+txt = input()
+result = ""
+
+while '(' in txt:
+    start_index = txt.find('(')
+    end_index = txt.find(')')
+    result += txt[start_index + 1:end_index] + ' '
+    txt = txt[:start_index] + txt[end_index + 1:]
+
+print(result.strip())
+
