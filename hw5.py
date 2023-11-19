@@ -57,8 +57,8 @@ print(string)
 
 """
 
-string1 = input().replace(' ','')
-string2 = input().replace(' ','')
+string1 = input().replace(' ','').lower()
+string2 = input().replace(' ','').lower()
 
 string1 = set(string1)
 string2 = set(string2)
