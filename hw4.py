@@ -83,6 +83,12 @@ print(f'x: {count_x}, y: {count_y}')
 #Ввод:When he saw Sally (a girl he used to go to school with) in the shop, he could not believe his eyes. She was fantastic (as always)!
 #Вывод: a girl he used to go to school with as always
 txt = input()
-str1 = txt[txt.find('(')+1:txt.find(')')] + ' ' + txt[txt.rfind('(')+1:txt.rfind(')')]
+result = ""
 
-print(str1)
+while '(' in txt:
+    start_index = txt.find('(')
+    end_index = txt.find(')')
+    result += txt[start_index + 1:end_index] + ' '
+    txt = txt[:start_index] + txt[end_index + 1:]
+
+print(result)
